@@ -8,6 +8,9 @@ for c = 1:200
 end
 %}
 
+%function handle way
+f = @(x) exp(-x.^2/5).*sin(2*x);
+
 pointsY = f(points)
 figure()
 plot(points, pointsY)
@@ -16,7 +19,11 @@ xlabel('x')
 ylabel('y values')
 legend('xes')
 
+
+
+%{
 function yValues = f(xValues)
     yValues = exp(-(xValues.^2)./5) .* sin(2 .* xValues);
 end
+%}
 
